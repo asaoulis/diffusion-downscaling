@@ -1,0 +1,8 @@
+name: my_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - black==23.9.1
+  - ruff==0.0.292
+  - pre-commit==3.5.0
