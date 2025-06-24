@@ -164,5 +164,9 @@ class Evaluation:
             precip_threshold_eces[f"ece_{threshold[0]}"] = (
                 Metrics.compute_cdf_calibration_bias(hist)
             )
+        calibration_error =  np.mean(
+            [precip_threshold_eces[f"ece_{threshold[0]}"][1] for threshold in thresholds]
+        )
+        precip_threshold_eces['calibration_error'] = calibration_error
 
         return precip_threshold_eces
